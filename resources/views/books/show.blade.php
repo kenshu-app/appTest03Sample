@@ -14,7 +14,7 @@
                         <a id="tab1" aria-controls="tab-panel1" aria-selected="true"
                             class="tab -active js-tab flex-grow border-b-2 border-gray-300 py-2 text-lg text-center px-1">{{ __('review') }}</a>
                         <a id="tab2" aria-controls="tab-panel2" aria-selected="false" tabindex="-1"
-                            class="tab js-tab flex-grow border-b-2 border-gray-300 py-2 text-lg text-center px-1">{{ __('comment') }}</a>
+                            class="tab js-tab flex-grow border-b-2 border-gray-300 py-2 text-lg text-center px-1">{{ __('like') }}</a>
                         <a id="tab3" aria-controls="tab-panel3" aria-selected="false" tabindex="-1"
                             class="tab js-tab flex-grow border-b-2 border-gray-300 py-2 text-lg text-center px-1">{{ __('image') }}</a>
                     </div>
@@ -47,8 +47,10 @@
                                 <path d="M19 12H5M12 19l-7-7 7-7" />
                             </svg>{{ __('book') . __('index') . __('back') }}
                         </a>
-                        <a href="{{ route('books.edit', $book->id) }}" class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">{{ __('edit') }}</a>
-                        <a href="" onclick="deleteBook()" class="flex ml-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">{{ __('delete') }}</a>
+                        <a href="{{ route('books.edit', $book->id) }}"
+                            class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">{{ __('edit') }}</a>
+                        <a href="" onclick="deleteBook()"
+                            class="flex ml-2 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">{{ __('delete') }}</a>
                         <form action="{{ route('books.destroy', $book) }}" method="post" id="delete-form">
                             @csrf
                             @method('delete')
