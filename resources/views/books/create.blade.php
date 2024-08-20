@@ -4,7 +4,7 @@
   </x-slot>
 
   <form action="{{ route('books.store') }}" method="post">
-      <x-form></x-form>
+      <x-form :book="$book"></x-form>
   </form>
 
 </x-app-layout>
